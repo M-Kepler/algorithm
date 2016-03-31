@@ -225,6 +225,55 @@ void mergeSort(int *a, int start,int end)
         merge(a,start,mid,end);
     }
 }
+
+//煎饼排序
+/*
+ * 1. 找到数组里最大的数 max，把arr[0,max]反转，这样 max 就到最上面了
+ * 2. 然后再把整个数组arr 反转，这样 max 就到达最后面了
+ * 3. 再对去掉 max 后的数组进行 1和2 的操作
+ */
+/* 逆置数组 arr[0..i] */
+void flip(int*arr, int i)
+{
+    int temp, start = 0;
+    while(start <i)
+    {
+        temp = arr[start];
+        arr[start]=arr[i];
+        arr[i]=temp;
+        start++;
+        i--;
+    }
+}
+/* 找出 arr[0..n-1] 内最大的元素的下标 */
+int findMax(int*arr, int n)
+{
+    int mi, i;
+    for (mi = 0, i = 0; i < n; ++i)
+        if (arr[i] > arr[mi])
+            mi = i;
+    return mi;
+}
+void pancakeSort(int *arr, int n)
+{
+    for (int curr_size = n; curr_size > 1; --curr_size)
+    {
+        int mi = findMax(arr, curr_size);
+        if (mi != curr_size-1)
+        {
+            flip(arr, mi);
+            flip(arr, curr_size-1);
+        }
+    }
+}
+
+void printArray(int arr[], int n)
+{
+    for (int i = 0; i < n; ++i)
+
+        cout<<arr[i]<<" ";
+}
+
 int main()
 {
     int *s = new int [n];
@@ -262,6 +311,11 @@ int main()
 
     cout<<"7\\sort by chooseSort"<<endl;
     chooseSort(s,n);
+    print(s);
+    cout<<endl;
+
+    cout<<"8\\sort by pancakeSort"<<endl;
+    pancakeSort(s,n);
     print(s);
     cout<<endl;
 
