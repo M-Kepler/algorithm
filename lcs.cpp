@@ -3,11 +3,12 @@
 * EMail        : hellohuangjinjie@gmail.com
 * Last modified: 2016-03-31 10:05:54
 * Filename     : lcs.cpp
-* Description  : longest comment string
+* Description  :
 *
-*   C[i,j]=0                        if i=0 || j=0
-*         =C[i-1,j-1]+1             if i,j>0 & xi = yj
-*         =max{C[i,j-1],C[i-1,j])   if i,j>0 & xi != xj
+*   longest comment string
+*   C[i,j]=0                     if i=0 || j=0
+*         =C[i-1,j-1]+1          if i,j>0 & xi = yj
+*         =max{C[i,j-1],C[i-1,j])if i,j>0 & xi != xj
 ***********************************************************/
 
 #include <iostream>
@@ -47,6 +48,7 @@ int my_lcs(int **A,string s1,string s2)
         A[i][0]=0;
     for(int j=0;j<len2;j++)
         A[0][j]=0;
+
     for(int i=1;i<=len1;i++)
         for(int j=1;j<=len2;j++)
         {

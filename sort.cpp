@@ -1,5 +1,5 @@
 /*============================================================================
-  排序：
+排序：
 http://blog.csdn.net/hguisu/article/details/7776068
 http://blog.csdn.net/jnu_simba/article/details/9705111
 ============================================================================*/
@@ -8,7 +8,6 @@ http://blog.csdn.net/jnu_simba/article/details/9705111
 #include <time.h>
 using namespace std;
 const int  n = 10;
-//几个工具函数
 void create(int a[])
 {
     srand((unsigned)time(NULL));
