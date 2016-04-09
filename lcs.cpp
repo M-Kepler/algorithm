@@ -4,7 +4,6 @@
 * Last modified: 2016-03-31 10:05:54
 * Filename     : lcs.cpp
 * Description  :
-*
 *   longest comment string
 *   C[i,j]=0                     if i=0 || j=0
 *         =C[i-1,j-1]+1          if i,j>0 & xi = yj
