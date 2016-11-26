@@ -3,9 +3,8 @@
 * EMail        : hellohuangjinjie@gmail.com
 * Last modified: 2016-03-31 10:29:52
 * Filename     : longestPald.cpp
-* Description  : test_file
+* Description  : 最长回文子串（另一个算法:manacher）
 
-======================最长回文子串===========================
 定义:
     比如：abcdedcb，它的回文子串有：a,ded,cdedc,bcdecdb,其中,
     bcdecdb是其中最长的那一个。我们要求输出并求出其长度
